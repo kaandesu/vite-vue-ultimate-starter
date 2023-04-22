@@ -12,7 +12,7 @@ export default mergeConfig(
       include: ['**/*.test.ts', '**/*.spec.ts'],
       setupFiles: ['src/vitestSetup.ts'],
       includeSource: ['src/**/*.spec.ts', 'src/**/*.test.ts', '**/*.vue'],
-      exclude: [...configDefaults.exclude, 'e2e/*']
+      exclude: [...configDefaults.exclude, 'src/e2e/*']
     }
   })
 )
