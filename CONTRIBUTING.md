@@ -14,6 +14,7 @@ These are the useful scripts that you can use while developing. You can find the
 | -------------------- | ---------------------------------------------------------- |
 | `dev`                | Start the development environment                          |
 | `build`              | Type check and build the app                               |
+| `build-only`         | Build the app                                              |
 | `build-test`         | Build the app and run the unit & e2e (headless) tests      |
 | `preview`            | Run the app on _preview_ mode                              |
 | `test`               | Run the unit tests and e2e tests                           |
@@ -33,6 +34,7 @@ These are the useful scripts that you can use while developing. You can find the
 | `type-check`         | Type check the app                                         |
 | `lint`               | Lint the app with ESlint                                   |
 | `format`             | Format the app with prettier                               |
+| `help`               | Logs the list of scripts in package.json                   |
 
 [//]: # 'When pushing your changes, always include a **changeset** file. You can do this by running the `changeset` script. It will ask you a few questions and then create a file for you. You can read more about it [here](https://github.com/changesets/changesets/blob/main/docs/adding-a-changeset.md).'
 

@@ -24,7 +24,8 @@
     "coverage": "vitest run --coverage",
     "type-check": "vue-tsc --noEmit --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "help":"node src/scripts/log-help.js"
   },
   "dependencies": {
     "daisyui": "^2.51.5",
