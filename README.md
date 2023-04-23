@@ -17,6 +17,8 @@ Vite Vue3 Template is a starter template for building Vue3 applications using Vi
 It comes pre-configured with
 several essential dependencies that will help you get started with your Vue3 project right away.
 
+[Live Demo](https://kaandesu.github.io/vite-vue-ultimate-starter/)
+
 ## Out of the box
 
 ### Vue3
