@@ -27,10 +27,10 @@ export default defineConfig(({ mode }) => {
       }),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
+        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon-dark.svg'],
         manifest: {
-          name: 'kaandesu/vite-template',
-          short_name: 'kaandesu/vite-template',
+          name: 'vite-template',
+          short_name: 'vite-template',
           theme_color: '#ffffff',
           icons: [
             {
@@ -53,7 +53,7 @@ export default defineConfig(({ mode }) => {
         },
         workbox: {
           navigateFallback: '/',
-          cleanupOutdatedCaches: false
+          cleanupOutdatedCaches: true
         },
         // client: {
         //   installPrompt: true,
