@@ -11,11 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - run: npm ci
-      - run: npx playwright install
-      - name: Test
-        run: npm run test:headless        
-      - name: Build
+      - run: npm ci      
+      - name: Unit tests
+        run: npm run test:unit        
+      - name: Build for production
         run: npm run build
       - uses: peaceiris/actions-gh-pages@v3
         with:
