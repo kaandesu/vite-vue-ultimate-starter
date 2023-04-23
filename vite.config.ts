@@ -65,7 +65,6 @@ export default defineConfig(({ mode }) => {
         }
       })
     ],
-    reporter: [['html', { open: 'never' }]],
     resolve: {
       extensions: [
         '.spec.ts',
