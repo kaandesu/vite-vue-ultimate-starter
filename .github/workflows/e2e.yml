@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Browsers
-        run: npm playwright install --with-deps
+        run: yarn playwright install --with-deps
       - name: Run Playwright tests
         run: npm run test:e2e
       - uses: actions/upload-artifact@v3
