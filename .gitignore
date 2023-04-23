@@ -31,6 +31,9 @@ coverage
 e2e-mobile-test-results
 e2e-desktop-test-results
 e2e-test-results
+e2e-artifacts
+e2e-desktop-artifacts
+e2e-mobile-artifacts
 .vite-inspect
 .rollup-inspect
 coverage
