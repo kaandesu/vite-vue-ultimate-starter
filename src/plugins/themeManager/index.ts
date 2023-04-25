@@ -1,39 +1,40 @@
 import type { App } from 'vue'
 import { defaults, pluginInitiated, currentTheme, isDark } from './reactives'
-export type DaisyThemes =
-  | 'default'
-  | 'storm'
-  | 'breeze'
-  | 'light'
-  | 'dark'
-  | 'cupcake'
-  | 'bumblebee'
-  | 'emerald'
-  | 'corporate'
-  | 'synthwave'
-  | 'retro'
-  | 'cyberpunk'
-  | 'valentine'
-  | 'halloween'
-  | 'garden'
-  | 'forest'
-  | 'aqua'
-  | 'lofi'
-  | 'pastel'
-  | 'fantasy'
-  | 'wireframe'
-  | 'black'
-  | 'luxury'
-  | 'dracula'
-  | 'cmyk'
-  | 'autumn'
-  | 'business'
-  | 'acid'
-  | 'lemonade'
-  | 'night'
-  | 'coffee'
-  | 'winter'
-
+export const daisyThemes = [
+  'default',
+  'storm',
+  'breeze',
+  'light',
+  'dark',
+  'cupcake',
+  'bumblebee',
+  'emerald',
+  'corporate',
+  'synthwave',
+  'retro',
+  'cyberpunk',
+  'valentine',
+  'halloween',
+  'garden',
+  'forest',
+  'aqua',
+  'lofi',
+  'pastel',
+  'fantasy',
+  'wireframe',
+  'black',
+  'luxury',
+  'dracula',
+  'cmyk',
+  'autumn',
+  'business',
+  'acid',
+  'lemonade',
+  'night',
+  'coffee',
+  'winter'
+] as const
+export type DaisyThemes = (typeof daisyThemes)[number]
 export type ThemeOptions = {
   light: DaisyThemes
   dark: DaisyThemes
