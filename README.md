@@ -19,6 +19,8 @@ several essential dependencies that will help you get started with your Vue3 pro
 
 [Live Demo](https://kaandesu.github.io/vite-vue-ultimate-starter/)
 
+<hr>
+
 ## Out of the box
 
 ### Vue3
@@ -43,20 +45,24 @@ several essential dependencies that will help you get started with your Vue3 pro
 - #### [ESLint](https://eslint.org/): A linting tool for JavaScript and TypeScript code.
 - #### [Prettier](https://prettier.io/): A code formatter that ensures consistency in your code style.
 
-### Custom Composables
+<hr>
 
-- #### useThemeManager: A composable that allows you to change the theme of your application.
-  - setTheme: Dynamically sets the theme of your application from [DaisyUI themes](https://daisyui.com/docs/themes/).
-  - getTheme: Returns the current theme of your application.
-  - toggleDark: Toggles the theme of your application between light and dark.
-  ```ts
-  import { useThemeManager } from '@/composables/useThemeManager'
-  const { setTheme, getTheme, toggleDark } = useThemeManager()
-  getTheme() // initial value is 'default'
-  setTheme('dark')
-  getTheme() // 'dark'
-  toggleDark() // 'light'
-  ```
+## Custom Plugins
+
+### Vue DaisyUI Theme Manager
+
+This plugin allows you to change the theme of your application at runtime.<br>
+It also allows you to watch for system theme changes and update the theme accordingly.<br>
+
+Initiate the plugin with the default theme and the dark theme.
+Theme options are from Daisiy UI themes as well as some custom added themes.
+Check all the built-in [DaisyUI Themes](https://daisyui.com/docs/themes/). <br>
+Create your own custom daisy ui theme [here](https://daisyui.com/theme-generator/) and add it to the
+`tailwind.config.js` file!
+
+You can find the detailed [API documentation here](https://github.com/kaandesu/vite-vue-ultimate-starter/tree/master/src/plugins/themeManager/README.md).
+
+<hr>
 
 ## Recommended IDE Setup
 
@@ -65,6 +71,8 @@ several essential dependencies that will help you get started with your Vue3 pro
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+<hr>
 
 ## Project Setup
 
@@ -138,6 +146,8 @@ npm run lint
 ```sh
 npm run help
 ```
+
+<hr>
 
 ## Contributing
 
