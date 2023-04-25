@@ -30,14 +30,14 @@ i {
   width: 32px;
   height: 32px;
 
-  color: var(--color-text);
+  color: currentColor;
 }
 
 h3 {
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0.4rem;
-  color: var(--color-heading);
+  color: theme('colors.accent');
 }
 
 @media (min-width: 1024px) {
@@ -51,7 +51,7 @@ h3 {
     left: -26px;
     position: absolute;
     border: 1px solid var(--color-border);
-    background: var(--color-background);
+    background: #f2f2f2;
     border-radius: 8px;
     width: 50px;
     height: 50px;
@@ -59,7 +59,7 @@ h3 {
 
   .item:before {
     content: ' ';
-    border-left: 1px solid var(--color-border);
+    border-left: 1px solid currentColor;
     position: absolute;
     left: 0;
     bottom: calc(50% + 25px);
@@ -68,7 +68,7 @@ h3 {
 
   .item:after {
     content: ' ';
-    border-left: 1px solid var(--color-border);
+    border-left: 1px solid currentColor;
     position: absolute;
     left: 0;
     top: calc(50% + 25px);
