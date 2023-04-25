@@ -1,15 +1,29 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <div class="container mockup-code max-w-xs">
+      <pre data-prefix="$"><code>// This is an about page</code></pre>
+    </div>
+
   </div>
 </template>
 
-<style>
+<style scoped lang="scss">
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
   }
+}
+
+.about {
+  padding: 5rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
 }
 </style>
