@@ -38,7 +38,7 @@ export type DaisyThemes = (typeof daisyThemes)[number]
 export type ThemeOptions = {
   light: DaisyThemes
   dark: DaisyThemes
-  watchSystemTheme?: boolean
+  watchSystemTheme: boolean
 }
 
 export const useThemeManager = () => {
@@ -109,7 +109,8 @@ export const useThemeManager = () => {
     toggleDark,
     setDefaults,
     getDefaults,
-    watchSystemTheme: isWatchingSystemTheme
+    watchSystemTheme: isWatchingSystemTheme,
+    isDark
   }
   pluginInitiated.value = true
   return { ...themeManagerInstance }

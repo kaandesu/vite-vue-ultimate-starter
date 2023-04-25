@@ -1,20 +1,53 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { type DaisyThemes, useThemeManager } from '@/plugins/themeManager';
-import { ref } from 'vue';
-const theme = ref<DaisyThemes>('default');
-const $theme = useThemeManager();
+import { type DaisyThemes, useThemeManager, daisyThemes } from '@/plugins/themeManager'
+import { ref, computed } from 'vue';
+const $theme = useThemeManager()
+const changeTheme = (e: any) => $theme.set(e.target.value as DaisyThemes)
+const selected = computed(() => $theme.get())
+const useSystem = ref<boolean>($theme.watchSystemTheme())
+const toggleWatchSystem = () => $theme.watchSystemTheme(useSystem.value)
+const darkToggle = ref<HTMLInputElement>();
+const isDarkMode = computed(() => {
+    let { dark, light } = $theme.getDefaults()
+    if ($theme.get() === dark) return 0
+    else if ($theme.get() === light) return 1
+    else {
+        if (darkToggle.value) darkToggle.value.indeterminate = true
+    }
+    return 2
+})
 </script>
 
 <template>
     <div class="container">
-        {{ $theme.get() }}
+        <section class="options-container">
+            <select v-model="selected" @change="e => changeTheme(e)" class="select select-primary w-full max-w-xs">
+                <option disabled selected>Select a theme!</option>
+                <option v-for="theme in daisyThemes" :key="theme">{{ theme }}</option>
+            </select>
+            <div class="form-control w-52">
+                <label class="cursor-pointer label">
+                    <span class="label-text">Use System Theme</span>
+                    <input v-model="useSystem" @change="toggleWatchSystem()" type="checkbox" class="toggle toggle-accent"
+                        :checked="useSystem" />
+                </label>
+            </div>
+            <div class="dMode">
+                <label class="swap swap-rotate" :class="{ 'swap-active': isDarkMode !== 2 && isDarkMode === 0 }">
+                    <span v-show="isDarkMode !== 2" class="swap-on material-icons-outlined text-3xl">light_mode</span>
+                    <span v-show="isDarkMode !== 2" class="swap-off material-icons-outlined text-3xl">dark_mode</span>
+                </label>
+                <span v-if="isDarkMode === 2" class="swap-off material-symbols-outlined text-3xl">circle</span>
+                <input @change="$theme.toggleDark()" ref="darkToggle" type="checkbox" class="toggle" />
+            </div>
+        </section>
         <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
-            <button class="btn" @click="$theme.set(theme)">Default</button>
-            <button class="btn btn-primary" @click="$theme.set('storm')">Primary</button>
-            <button class="btn btn-secondary" @click="$theme.toggleDark">Secondary</button>
-            <button class="btn btn-accent" @click="$theme.watchSystemTheme(false)">Accent</button>
-            <button class="btn btn-info" @click="$theme.watchSystemTheme(true)">Info</button>
+            <button class="btn">Default</button>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-accent">Accent</button>
+            <button class="btn btn-info">Info</button>
             <button class="btn btn-success">Success</button>
             <button class="btn btn-warning">Warning</button>
             <button class="btn btn-error">Error</button>
@@ -173,8 +206,23 @@ const $theme = useThemeManager();
 }
 
 .container {
+    gap: 1.5rem;
     overflow: hidden;
     padding-top: 100px;
     height: auto;
+}
+
+.options-container {
+    margin: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .dMode {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+    }
 }
 </style>
