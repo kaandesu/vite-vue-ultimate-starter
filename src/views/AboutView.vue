@@ -21,9 +21,10 @@
 
 .about {
   padding: 5rem;
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 1rem;
   align-items: center;
-  align-content: center;
 }
 </style>

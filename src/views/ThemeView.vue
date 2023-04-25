@@ -22,18 +22,22 @@ const isDarkMode = computed(() => {
 <template>
     <div class="container">
         <section class="options-container">
-            <select v-model="selected" @change="e => changeTheme(e)" class="select select-primary w-full max-w-xs">
-                <option disabled selected>Select a theme!</option>
-                <option v-for="theme in daisyThemes" :key="theme">{{ theme }}</option>
-            </select>
-            <div class="form-control w-52">
-                <label class="cursor-pointer label">
-                    <span class="label-text">Use System Theme</span>
-                    <input v-model="useSystem" @change="toggleWatchSystem()" type="checkbox" class="toggle toggle-accent"
-                        :checked="useSystem" />
-                </label>
+            <div class="flexCol">
+                <select v-model="selected" @change="e => changeTheme(e)" class="select select-primary w-full max-w-xs">
+                    <option disabled selected>Select a theme!</option>
+                    <option v-for="theme in daisyThemes" :key="theme">{{ theme }}</option>
+                </select>
             </div>
-            <div class="dMode">
+            <div class="flexCol">
+                <div class="form-control w-52">
+                    <label class="cursor-pointer label">
+                        <span class="label-text">Use System Theme</span>
+                        <input v-model="useSystem" @change="toggleWatchSystem()" type="checkbox"
+                            class="toggle toggle-accent" :checked="useSystem" />
+                    </label>
+                </div>
+            </div>
+            <div class="flexCol">
                 <label class="swap swap-rotate" :class="{ 'swap-active': isDarkMode !== 2 && isDarkMode === 0 }">
                     <span v-show="isDarkMode !== 2" class="swap-on material-icons-outlined text-3xl">light_mode</span>
                     <span v-show="isDarkMode !== 2" class="swap-off material-icons-outlined text-3xl">dark_mode</span>
@@ -217,7 +221,7 @@ const isDarkMode = computed(() => {
     display: flex;
     flex-flow: column nowrap;
 
-    .dMode {
+    .flexCol {
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
